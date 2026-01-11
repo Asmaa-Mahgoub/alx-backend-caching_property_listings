@@ -74,15 +74,15 @@ def property_list(request):
         
     except Exception as e:
         # Handle any unexpected errors
-        return JsonResponse(
-            {
+        return JsonResponse({
                 "error": "An error occurred while fetching properties",
                 "details": str(e)
             },
             status=500,
             safe=True,
             json_dumps_params={"ensure_ascii": False},
-        )from django.http import JsonResponse
+        )
+from django.http import JsonResponse
 from django.views.decorators.cache import cache_page
 from django.views.decorators.http import require_GET
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
